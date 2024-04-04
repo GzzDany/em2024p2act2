@@ -62,13 +62,13 @@ def input_calculate_tip(num_tests=20):
     correct_prices = [str(i) for i in range(10, 500, 10)]
     ### generate the price input values. Some with mistakes in there. 
     prices = [[choice(correct_prices)] for i in range(10)]
-    prices += [choices(negative_prices, k=choice([1, 2, 3, 4])) + [choice(correct_prices)] for i in range(num_>
+    prices += [choices(negative_prices, k=choice([1, 2, 3, 4])) + [choice(correct_prices)] for i in range(num__tests-13)]
     prices += [choices(invalid_prices, k=choice([1, 2, 3, 4])) + [choice(correct_prices)] for i in range(3)]
     ### generate satisfaction input values, some with mistakes in there. 
     correct_satisfaction = ["0", "1", "2", "3", "4", "5"]
     incorrect_satisfaction = ["one", "bad", "no"]
     satisfactions = [[choice(correct_satisfaction)] for i in range(15)]
-    satisfactions += [choices(incorrect_satisfaction, k=choice([1, 2, 3, 4])) + [choice(correct_satisfaction)]>
+    satisfactions += [choices(incorrect_satisfaction, k=choice([1, 2, 3, 4])) + [choice(correct_satisfaction)] for i in range(5)]
     input_values = []
     for price, satisfaction in zip(prices, satisfactions):
         input_values.append(price+satisfaction)
